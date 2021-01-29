@@ -1,0 +1,16 @@
+{
+  "name": "rbessarab/328/dating",
+
+  "authors":
+  [
+    {
+      "name": "Dailee Howard",
+      "email": "Dhoward18@mail.greenriver.edu"
+    }
+  ],
+
+  "require":
+  {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
