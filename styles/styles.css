@@ -1,11 +1,22 @@
+/*
+    Name: Dailee Howard
+    Date: January 28th, 2021
+    File: styles.css
+ */
+
 h2, h5
 {
     text-align: center;
 }
 
-div.button
+a
 {
-    text-align: center;
+    text-decoration: none;
+}
+
+li
+{
+    list-style: none;
 }
 
 img
