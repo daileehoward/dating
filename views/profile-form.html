@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create A Profile!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container-fluid row-cols-12">
+        <h1>Profile</h1>
+
+        <form method="post" action="#">
+            <div class="container-fluid col-6 float-left">
+                <div class="container-fluid form-group">
+                    <label><strong>Email</strong></label>
+                    <br>
+                    <input class="form-control" type="email" name="email">
+                </div>
+
+                <div class="container-fluid form-group">
+                    <label><strong>State</strong></label>
+                    <br>
+                    <input class="form-control" type="text" name="state">
+                </div>
+
+                <div class="container-fluid form-group">
+                    <label><strong>Seeking</strong></label>
+                    <br>
+                    <input type="radio" name="seeking[]" id="male">&nbsp&nbspMale
+                    &nbsp&nbsp
+                    <input type="radio" name="seeking[]" id="female">&nbsp&nbspFemale
+                </div>
+            </div>
+
+            <div class="container-fluid col-6 float-right">
+                <div class="container-fluid form-group">
+                    <label><strong>Biography</strong></label>
+                    <br>
+                    <textarea class="form-control" type="text" name="biography"></textarea>
+                </div>
+
+                <button class="btn btn-primary float-right"><a href="interests">Next ></a></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

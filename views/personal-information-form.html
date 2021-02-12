@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create A Profile!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="container-fluid row-cols-12 p-5">
+    <h1 class="border-bottom p-2">Personal Information</h1>
+
+    <div class="container-fluid col-8 float-left">
+        <form method="post" action="#">
+            <div class="container-fluid form-group">
+                <label><strong>First Name</strong></label>
+                <br>
+                <input class="form-control" type="text" name="first-name">
+            </div>
+
+            <div class="container-fluid form-group">
+                <label><strong>Last Name</strong></label>
+                <br>
+                <input class="form-control" type="text" name="last-name">
+            </div>
+
+            <div class="container-fluid form-group">
+                <label><strong>Species</strong></label>
+                <br>
+                <input class="form-control" type="text" name="species">
+            </div>
+
+            <div class="container-fluid form-group">
+                <label><strong>Age</strong></label>
+                <br>
+                <input class="form-control" type="number" name="age">
+            </div>
+
+            <div class="container-fluid form-group">
+                <label><strong>Gender</strong></label>
+                <br>
+                <input type="radio" name="gender[]" id="male">&nbsp&nbspMale
+                &nbsp&nbsp
+                <input type="radio" name="gender[]" id="female">&nbsp&nbspFemale
+            </div>
+
+            <div class="container-fluid form-group">
+                <label><strong>Phone Number</strong></label>
+                <br>
+                <input class="form-control" type="tel" name="phone">
+            </div>
+        </form>
+    </div>
+
+    <div class="container-fluid col-4 float-right pb-2">
+        <div class="jumbotron border border-muted rounded">
+            <p>
+                <strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information
+                can only be viewed by others with your permission.
+            </p>
+        </div>
+
+        <button class="btn btn-primary float-right"><a href="profile">Next ></a></button>
+    </div>
+</div>
+</body>
+</html>
