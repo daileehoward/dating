@@ -23,3 +23,8 @@ img
 {
     justify-content: right;
 }
+
+#submitButton
+{
+    clear: both;
+}

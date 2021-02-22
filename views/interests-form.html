@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Create A Profile!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row-cols-9 p-5">
+    <div class="container-fluid p-3">
         <h1>Interests</h1>
 
         <div class="container-fluid">
-            <label>Indoor Interests</label>
-            <input type="checkbox" name="indoor" value="{{ @indoorActivities }}">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <label><strong>Indoor Interests</strong></label>
+                    <br>
+                    <div class="row">
+                        <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
+                            <div class="col-3">
+                                <input type="checkbox" name="indoor" id="{{ @indoorInterests }}"
+                                       value="{{ @indoorInterest }}">
+                                {{ ucfirst(@indoorInterest) }}
+                            </div>
+                        </repeat>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label><strong>Outdoor Interests</strong></label>
+                    <br>
+                    <div class="row">
+                        <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
+                            <div class="col-3">
+                                <input type="checkbox" name="outdoor" id="{{ @outdoorInterests }}"
+                                       value="{{ @outdoorInterest }}">
+                                {{ ucfirst(@outdoorInterest) }}
+                            </div>
+                        </repeat>
+                    </div>
+                </div>
+
+                <a id="submitButton" href="#" class="btn btn-primary float-right">Next ></a>
+            </form>
         </div>
+    </div>
 </body>
 </html>
