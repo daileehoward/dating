@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+        Name: Dailee Howard
+        File: profile-form.html
+        Description: Profile page for Bow-Meow Dates.
+    -->
+
     <meta charset="UTF-8">
     <title>Create A Profile!</title>
 
@@ -10,6 +16,7 @@
 </head>
 <body>
     <div class="p-3">
+        <!-- Navigation -->
         <ul class="nav nav-justified">
             <li class="nav-item active"><a href="{{ @BASE }}">Home</a></li>
             <li class="nav-item"><a href="">Login</a></li>
@@ -21,6 +28,7 @@
             <h1>Profile</h1>
             <hr>
 
+            <!-- Form -->
             <form method="post" action="interests">
                 <div class="container-fluid col-6 float-left">
                     <div class="container-fluid form-group">
@@ -52,6 +60,7 @@
                     </div>
                 </div>
 
+                <!-- Next Button -->
                 <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
             </form>
         </div>
