@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Summary</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container-fluid row p-5">
+        <div class="col-6">
+            <div class="border vertical-align">
+                <p class="pl-3">Name: {{ @SESSION.name }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Species: {{ @SESSION.species }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Gender: {{ ucfirst(@SESSION.gender) }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Age: {{ @SESSION.age }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Phone: {{ @SESSION.phone }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Email: {{ @SESSION.email }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">State: {{ @SESSION.state }}</p>
+            </div>
+
+            <div class="border vertical-align">
+                <p class="pl-3">Seeking: {{ ucfirst(@SESSION.seeking) }}</p>
+            </div>
+
+            <div class="border align-vertical-parent">
+                <p class="pl-3 align-vertical-child">Interest: {{ @SESSION.interests }}</p>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="center">
+                <img class="img-fluid center" src="images/dog-profile.jpg" alt="pets">
+            </div>
+
+            <p class="larger-text">Biography</p>
+            <p>{{ @SESSION.biography }}</p>
+        </div>
+    </div>
+
+    <div id="centerButton">
+        <input type="submit" id="submitButton" href="#" class="btn btn-primary" value="Contact Me!">
+    </div>
+</body>
+</html>

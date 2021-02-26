@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row-cols-12">
+    <div class="container-fluid row-cols-12 p-5">
         <h1>Profile</h1>
+        <hr>
 
-        <form method="post" action="#">
+        <form method="post" action="interests">
             <div class="container-fluid col-6 float-left">
                 <div class="container-fluid form-group">
                     <label><strong>Email</strong></label>
@@ -29,9 +30,9 @@
                 <div class="container-fluid form-group">
                     <label><strong>Seeking</strong></label>
                     <br>
-                    <input type="radio" name="seeking[]" id="male">&nbsp&nbspMale
-                    &nbsp&nbsp
-                    <input type="radio" name="seeking[]" id="female">&nbsp&nbspFemale
+                    <input type="radio" name="seeking" id="male" value="male">&nbsp;&nbsp;Male
+                    &nbsp;&nbsp;
+                    <input type="radio" name="seeking" id="female" value="female">&nbsp;&nbsp;Female
                 </div>
             </div>
 
@@ -39,11 +40,11 @@
                 <div class="container-fluid form-group">
                     <label><strong>Biography</strong></label>
                     <br>
-                    <textarea class="form-control" type="text" name="biography"></textarea>
+                    <textarea class="form-control" name="biography"></textarea>
                 </div>
             </div>
 
-            <a id="submitButton" href="interests" class="btn btn-primary float-right">Next ></a>
+            <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
         </form>
     </div>
 </body>

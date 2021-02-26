@@ -28,3 +28,34 @@ img
 {
     clear: both;
 }
+
+#centerButton
+{
+    text-align: center;
+}
+
+.vertical-align
+{
+    height: 50px;
+    line-height: 50px;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.larger-text
+{
+    font-size: 22px;
+}
+
+.align-vertical-parent
+{
+    padding: 3px 0;
+}
+
+.align-vertical-child
+{
+    padding: 6px 0;
+}
