@@ -9,43 +9,52 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row-cols-12 p-5">
-        <h1>Profile</h1>
-        <hr>
+    <div class="p-3">
+        <ul class="nav nav-justified">
+            <li class="nav-item active"><a href="{{ @BASE }}">Home</a></li>
+            <li class="nav-item"><a href="">Login</a></li>
+            <li class="nav-item"><a href="">Success Stories</a></li>
+            <li class="nav-item"><a href="">Contact Us</a></li>
+        </ul>
 
-        <form method="post" action="interests">
-            <div class="container-fluid col-6 float-left">
-                <div class="container-fluid form-group">
-                    <label><strong>Email</strong></label>
-                    <br>
-                    <input class="form-control" type="email" name="email">
+        <div class="container-fluid row-cols-12 p-5">
+            <h1>Profile</h1>
+            <hr>
+
+            <form method="post" action="interests">
+                <div class="container-fluid col-6 float-left">
+                    <div class="container-fluid form-group">
+                        <label><strong>Email</strong></label>
+                        <br>
+                        <input class="form-control" type="email" name="email">
+                    </div>
+
+                    <div class="container-fluid form-group">
+                        <label><strong>State</strong></label>
+                        <br>
+                        <input class="form-control" type="text" name="state">
+                    </div>
+
+                    <div class="container-fluid form-group">
+                        <label><strong>Seeking</strong></label>
+                        <br>
+                        <input type="radio" name="seeking" id="male" value="male">&nbsp;&nbsp;Male
+                        &nbsp;&nbsp;
+                        <input type="radio" name="seeking" id="female" value="female">&nbsp;&nbsp;Female
+                    </div>
                 </div>
 
-                <div class="container-fluid form-group">
-                    <label><strong>State</strong></label>
-                    <br>
-                    <input class="form-control" type="text" name="state">
+                <div class="container-fluid col-6 float-right">
+                    <div class="container-fluid form-group">
+                        <label><strong>Biography</strong></label>
+                        <br>
+                        <textarea class="form-control" name="biography"></textarea>
+                    </div>
                 </div>
 
-                <div class="container-fluid form-group">
-                    <label><strong>Seeking</strong></label>
-                    <br>
-                    <input type="radio" name="seeking" id="male" value="male">&nbsp;&nbsp;Male
-                    &nbsp;&nbsp;
-                    <input type="radio" name="seeking" id="female" value="female">&nbsp;&nbsp;Female
-                </div>
-            </div>
-
-            <div class="container-fluid col-6 float-right">
-                <div class="container-fluid form-group">
-                    <label><strong>Biography</strong></label>
-                    <br>
-                    <textarea class="form-control" name="biography"></textarea>
-                </div>
-            </div>
-
-            <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
-        </form>
+                <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
+            </form>
+        </div>
     </div>
 </body>
 </html>

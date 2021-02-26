@@ -9,57 +9,68 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row p-5">
-        <div class="col-6">
-            <div class="border vertical-align">
-                <p class="pl-3">Name: {{ @SESSION.name }}</p>
+    <div class="p-3">
+        <ul class="nav nav-justified">
+            <li class="nav-item active"><a href="{{ @BASE }}">Home</a></li>
+            <li class="nav-item"><a href="">Login</a></li>
+            <li class="nav-item"><a href="">Success Stories</a></li>
+            <li class="nav-item"><a href="">Contact Us</a></li>
+        </ul>
+
+        <div class="container-fluid row p-5">
+            <div class="col-6">
+                <div class="border vertical-align">
+                    <p class="pl-3">Name: {{ @SESSION.name }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Species: {{ @SESSION.species }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Gender: {{ ucfirst(@SESSION.gender) }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Age: {{ @SESSION.age }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Phone: {{ @SESSION.phone }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Email: {{ @SESSION.email }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">State: {{ @SESSION.state }}</p>
+                </div>
+
+                <div class="border vertical-align">
+                    <p class="pl-3">Seeking: {{ ucfirst(@SESSION.seeking) }}</p>
+                </div>
+
+                <div class="border align-vertical-parent">
+                    <p class="pl-3 align-vertical-child">Interest: {{ @SESSION.interests }}</p>
+                </div>
             </div>
 
-            <div class="border vertical-align">
-                <p class="pl-3">Species: {{ @SESSION.species }}</p>
-            </div>
+            <div class="col-6">
+                <div class="center">
+                    <img class="img-fluid center" src="images/dog-profile.jpg" alt="pets">
+                </div>
 
-            <div class="border vertical-align">
-                <p class="pl-3">Gender: {{ ucfirst(@SESSION.gender) }}</p>
-            </div>
-
-            <div class="border vertical-align">
-                <p class="pl-3">Age: {{ @SESSION.age }}</p>
-            </div>
-
-            <div class="border vertical-align">
-                <p class="pl-3">Phone: {{ @SESSION.phone }}</p>
-            </div>
-
-            <div class="border vertical-align">
-                <p class="pl-3">Email: {{ @SESSION.email }}</p>
-            </div>
-
-            <div class="border vertical-align">
-                <p class="pl-3">State: {{ @SESSION.state }}</p>
-            </div>
-
-            <div class="border vertical-align">
-                <p class="pl-3">Seeking: {{ ucfirst(@SESSION.seeking) }}</p>
-            </div>
-
-            <div class="border align-vertical-parent">
-                <p class="pl-3 align-vertical-child">Interest: {{ @SESSION.interests }}</p>
+                <p class="larger-text">Biography</p>
+                <div class="center wrapped-text">
+                    <p>{{ @SESSION.biography }}</p>
+                </div>
             </div>
         </div>
 
-        <div class="col-6">
-            <div class="center">
-                <img class="img-fluid center" src="images/dog-profile.jpg" alt="pets">
-            </div>
-
-            <p class="larger-text">Biography</p>
-            <p>{{ @SESSION.biography }}</p>
+        <div id="centerButton">
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Contact Me!">
         </div>
-    </div>
-
-    <div id="centerButton">
-        <input type="submit" id="submitButton" class="btn btn-primary" value="Contact Me!">
     </div>
 </body>
 </html>

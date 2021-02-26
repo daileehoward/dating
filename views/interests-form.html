@@ -9,41 +9,50 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row-cols-12 p-5">
-        <h1>Interests</h1>
-        <hr>
+    <div class="p-3">
+        <ul class="nav nav-justified">
+            <li class="nav-item active"><a href="{{ @BASE }}">Home</a></li>
+            <li class="nav-item"><a href="">Login</a></li>
+            <li class="nav-item"><a href="">Success Stories</a></li>
+            <li class="nav-item"><a href="">Contact Us</a></li>
+        </ul>
 
-        <div class="container-fluid">
-            <form method="post" action="summary">
-                <div class="form-group">
-                    <label><strong>Indoor Interests</strong></label>
-                    <br>
-                    <div class="row">
-                        <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
-                            <div class="col-3">
-                                <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}">
-                                {{ ucfirst(@indoorInterest) }}
-                            </div>
-                        </repeat>
+        <div class="container-fluid row-cols-12 p-5">
+            <h1>Interests</h1>
+            <hr>
+
+            <div class="container-fluid">
+                <form method="post" action="summary">
+                    <div class="form-group">
+                        <label><strong>Indoor Interests</strong></label>
+                        <br>
+                        <div class="row">
+                            <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
+                                <div class="col-3">
+                                    <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}">
+                                    {{ ucfirst(@indoorInterest) }}
+                                </div>
+                            </repeat>
+                        </div>
                     </div>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <label><strong>Outdoor Interests</strong></label>
                     <br>
-                    <div class="row">
-                        <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
-                            <div class="col-3">
-                                <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}">
-                                {{ ucfirst(@outdoorInterest) }}
-                            </div>
-                        </repeat>
-                    </div>
-                </div>
 
-                <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
-            </form>
+                    <div class="form-group">
+                        <label><strong>Outdoor Interests</strong></label>
+                        <br>
+                        <div class="row">
+                            <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
+                                <div class="col-3">
+                                    <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}">
+                                    {{ ucfirst(@outdoorInterest) }}
+                                </div>
+                            </repeat>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
+                </form>
+            </div>
         </div>
     </div>
 </body>

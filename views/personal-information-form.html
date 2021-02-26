@@ -9,62 +9,71 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="container-fluid row-cols-12 p-5">
-        <h1 class="border-bottom p-2">Personal Information</h1>
-        <hr>
+    <div class="p-3">
+        <ul class="nav nav-justified">
+            <li class="nav-item active"><a href="{{ @BASE }}">Home</a></li>
+            <li class="nav-item"><a href="">Login</a></li>
+            <li class="nav-item"><a href="">Success Stories</a></li>
+            <li class="nav-item"><a href="">Contact Us</a></li>
+        </ul>
 
-        <form method="post" action="profile">
-            <div class="container-fluid col-8 float-left">
-                <div class="form-group">
-                    <label><strong>First Name</strong></label>
-                    <br>
-                    <input class="form-control" type="text" name="firstName">
+        <div class="container-fluid row-cols-12 p-5">
+            <h1 class="border-bottom p-2">Personal Information</h1>
+            <hr>
+
+            <form method="post" action="profile">
+                <div class="container-fluid col-8 float-left">
+                    <div class="form-group">
+                        <label><strong>First Name</strong></label>
+                        <br>
+                        <input class="form-control" type="text" name="firstName">
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Last Name</strong></label>
+                        <br>
+                        <input class="form-control" type="text" name="lastName">
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Species</strong></label>
+                        <br>
+                        <input class="form-control" type="text" name="species">
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Age</strong></label>
+                        <br>
+                        <input class="form-control" type="number" name="age">
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Gender</strong></label>
+                        <br>
+                        <input type="radio" name="gender" value="male">&nbsp;&nbsp;Male
+                        &nbsp;&nbsp;
+                        <input type="radio" name="gender" value="female">&nbsp;&nbsp;Female
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Phone Number</strong></label>
+                        <br>
+                        <input class="form-control" type="tel" name="phone">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label><strong>Last Name</strong></label>
-                    <br>
-                    <input class="form-control" type="text" name="lastName">
+                <div class="col-4 float-right pb-2">
+                    <div class="jumbotron border border-muted rounded">
+                        <p>
+                            <strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information
+                            can only be viewed by others with your permission.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label><strong>Species</strong></label>
-                    <br>
-                    <input class="form-control" type="text" name="species">
-                </div>
-
-                <div class="form-group">
-                    <label><strong>Age</strong></label>
-                    <br>
-                    <input class="form-control" type="number" name="age">
-                </div>
-
-                <div class="form-group">
-                    <label><strong>Gender</strong></label>
-                    <br>
-                    <input type="radio" name="gender" value="male">&nbsp;&nbsp;Male
-                    &nbsp;&nbsp;
-                    <input type="radio" name="gender" value="female">&nbsp;&nbsp;Female
-                </div>
-
-                <div class="form-group">
-                    <label><strong>Phone Number</strong></label>
-                    <br>
-                    <input class="form-control" type="tel" name="phone">
-                </div>
-            </div>
-
-            <div class="col-4 float-right pb-2">
-                <div class="jumbotron border border-muted rounded">
-                    <p>
-                        <strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information
-                        can only be viewed by others with your permission.
-                    </p>
-                </div>
-            </div>
-
-            <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
-        </form>
+                <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
+            </form>
+        </div>
     </div>
 </body>
 </html>
