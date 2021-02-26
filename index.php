@@ -69,7 +69,7 @@
     });
 
     // Define a default route (profile summary page)
-    $f3->route('POST /summary', function($f3)
+    $f3->route('GET|POST /summary', function()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {

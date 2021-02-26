@@ -21,8 +21,7 @@
                     <div class="row">
                         <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
                             <div class="col-3">
-                                <input type="checkbox" name="indoor[]" id="{{ @indoorInterest }}"
-                                       value="{{ @indoorInterest }}">
+                                <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}">
                                 {{ ucfirst(@indoorInterest) }}
                             </div>
                         </repeat>
@@ -36,8 +35,7 @@
                     <div class="row">
                         <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
                             <div class="col-3">
-                                <input type="checkbox" name="outdoor[]" id="{{ @outdoorInterest }}"
-                                       value="{{ @outdoorInterest }}">
+                                <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}">
                                 {{ ucfirst(@outdoorInterest) }}
                             </div>
                         </repeat>
