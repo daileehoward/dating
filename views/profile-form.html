@@ -35,6 +35,10 @@
                         <label><strong>Email</strong></label>
                         <br>
                         <input class="form-control" type="email" name="email">
+
+                        <check if="{{ isset(@errors['email']) }}">
+                            {{ @errors["email"] }}
+                        </check>
                     </div>
 
                     <div class="container-fluid form-group">

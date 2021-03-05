@@ -50,18 +50,17 @@
             {
                 $_SESSION['name'] = $firstName . " " . $lastName;
             }
-            else if (!$validator->validName($firstName) && !$validator->validName($lastName))
-            {
-                $f3->set('errors["firstName", "lastName"]', "*First and last name can't be empty and must contain only 
-                characters");
-            }
-            else if (!$validator->validName($lastName))
-            {
-                $f3->set('errors["firstName"]', "*First name can't be empty and must contain only characters");
-            }
             else
             {
-                $f3->set('errors["lastName"]', "*Last name can't be empty and must contain only characters");
+                if (!$validator->validName($firstName))
+                {
+                    $f3->set('errors["firstName"]', "*First name can't be empty and must contain only characters");
+                }
+
+                if (!$validator->validName($lastName))
+                {
+                    $f3->set('errors["lastName"]', "*Last name can't be empty and must contain only characters");
+                }
             }
 
             if ($validator->validAge($age))
@@ -70,7 +69,7 @@
             }
             else
             {
-                $f3->set('errors["age"]', "Age can't be empty and must be numeric between 18 and 118");
+                $f3->set('errors["age"]', "*Age can't be empty and must be numeric between 18 and 118");
             }
 
             if ($validator->validPhone($phone))
@@ -79,7 +78,7 @@
             }
             else
             {
-                $f3->set('errors["phone"]', "Phone can't be empty and must be in the pattern: XXX-XXX-XXXX");
+                $f3->set('errors["phone"]', "*Phone can't be empty and must be in the pattern: XXX-XXX-XXXX");
             }
 
             if (empty($f3->get('errors')))
@@ -112,8 +111,7 @@
             }
             else
             {
-                $f3->set('errors["email"]', "Email can't be empty and must be formatted correctly");
-                echo "error";
+                $f3->set('errors["email"]', "*Email can't be empty and must be formatted correctly");
             }
 
             if (empty($f3->get('errors')))
