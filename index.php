@@ -87,6 +87,11 @@
             }
         }
 
+        $f3->set('firstName', isset($firstName) ? $firstName : "");
+        $f3->set('lastName', isset($lastName) ? $lastName : "");
+        $f3->set('age', isset($age) ? $age : "");
+        $f3->set('phone', isset($phone) ? $phone : "");
+
         // Display the view
         $view = new Template();
         echo $view->render('views/personal-information-form.html');
@@ -119,6 +124,8 @@
                 $f3->reroute('/interests');
             }
         }
+
+        $f3->set("email", isset($email) ? $email : "");
 
         // Display the view
         $view = new Template();
