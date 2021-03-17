@@ -136,10 +136,14 @@
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST')
             {
-                $indoorInterests = $_POST['indoor[]'];
-                $outdoorInterests = $_POST['outdoor[]'];
+                $indoorInterests = $_POST['indoor'];
+                $outdoorInterests = $_POST['outdoor'];
 
-                if ($validator->validIndoor($indoorInterests, $dataLayer->getIndoorInterests()))
+                if ($indoorInterests == "")
+                {
+                    $_SESSION['indoorInterests'] = "No indoor interests";
+                }
+                else if ($validator->validIndoor($indoorInterests))
                 {
                     $_SESSION['indoorInterests'] = implode(", ", $indoorInterests);
                 }
@@ -148,7 +152,11 @@
                     $this->_f3->set('errors["indoor"]', "*Select at least one indoor interest");
                 }
 
-                if ($validator->validOutdoor($outdoorInterests, $dataLayer->getOutdoorInterests()))
+                if ($outdoorInterests == "")
+                {
+                    $_SESSION['outdoorInterests'] = "No outdoor interests";
+                }
+                else if ($validator->validOutdoor($outdoorInterests))
                 {
                     $_SESSION['outdoorInterests'] = implode(", ", $outdoorInterests);
                 }

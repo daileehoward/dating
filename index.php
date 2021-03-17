@@ -21,8 +21,8 @@
 
     // Add classes
     $controller = new Controller($f3);
-    $validator = new Validate();
     $dataLayer = new DataLayer();
+    $validator = new Validate($dataLayer);
 
     // Turn on Fat-Free error reporting
     $f3->set('DEBUG', 3);
@@ -58,7 +58,8 @@
     // Define a route (profile summary page)
     $f3->route('GET /summary', function()
     {
-
+        global $controller;
+        $controller->summary();
     });
 
     $f3->run();

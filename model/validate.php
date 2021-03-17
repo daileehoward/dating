@@ -3,12 +3,10 @@
     {
         private $_dataLayer;
 
-        /*
         function __construct($dataLayer)
         {
             $this->_dataLayer = $dataLayer;
         }
-        */
 
         function validName($name)
         {
@@ -30,13 +28,33 @@
             return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
         }
 
-        function validOutdoor($outdoorInterests, $validOutdoorInterests)
+        function validOutdoor($outdoorInterests)
         {
-            return in_array($outdoorInterests, $validOutdoorInterests);
+            $validOutdoorInterests = $this->_dataLayer->getOutdoorInterests();
+
+            foreach ($outdoorInterests as $outdoorInterest)
+            {
+                if (!in_array($outdoorInterest, $validOutdoorInterests))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        function validIndoor($indoorInterests, $validIndoorInterests)
+        function validIndoor($indoorInterests)
         {
-            return in_array($indoorInterests, $validIndoorInterests);
+            $validIndoorInterests = $this->_dataLayer->getIndoorInterests();
+
+            foreach ($indoorInterests as $indoorInterest)
+            {
+                if (!in_array($indoorInterest, $validIndoorInterests))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }

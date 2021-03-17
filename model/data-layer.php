@@ -7,11 +7,6 @@
 
     class DataLayer
     {
-        function __construct()
-        {
-
-        }
-
         /**
          * Returns an indoor interests array for the interests page.
          * @return string[] indoor interests array

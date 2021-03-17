@@ -38,7 +38,7 @@
                         <div class="row">
                             <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="indoor" value="{{ @indoorInterest }}"
+                                    <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}"
                                     <check if="{{ @indoorInterest == @indoor }}">
                                         checked
                                     </check>
@@ -46,11 +46,11 @@
                                 </div>
                             </repeat>
                         </div>
-
-                        <check if="{{ isset(@errors['indoor']) }}">
-                            {{ @errors["indoor"] }}
-                        </check>
                     </div>
+
+                    <check if="{{ isset(@errors['indoor']) }}">
+                        {{ @errors["indoor"] }}
+                    </check>
                     <br>
 
                     <div class="form-group">
@@ -60,7 +60,7 @@
                         <div class="row">
                             <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="outdoor" value="{{ @outdoorInterest }}"
+                                    <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}"
                                     <check if="{{ @outdoorInterest == @outdoor }}">
                                         checked
                                     </check>
@@ -68,11 +68,11 @@
                                 </div>
                             </repeat>
                         </div>
-
-                        <check if="{{ isset(@errors['outdoor']) }}">
-                            {{ @errors["outdoor"] }}
-                        </check>
                     </div>
+
+                    <check if="{{ isset(@errors['outdoor']) }}">
+                        {{ @errors["outdoor"] }}
+                    </check>
 
                     <!-- Next Button -->
                     <input type="submit" value="Next >" id="submitButton" class="btn btn-primary float-right">
