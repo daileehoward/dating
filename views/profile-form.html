@@ -44,15 +44,20 @@
                     <div class="container-fluid form-group">
                         <label><strong>State</strong></label>
                         <br>
-                        <input class="form-control" type="text" name="state">
+                        <input class="form-control" type="text" name="state" value="{{ @state }}">
                     </div>
 
                     <div class="container-fluid form-group">
                         <label><strong>Seeking</strong></label>
                         <br>
-                        <input type="radio" name="seeking" id="male" value="male">&nbsp;&nbsp;Male
-                        &nbsp;&nbsp;
-                        <input type="radio" name="seeking" id="female" value="female">&nbsp;&nbsp;Female
+
+                        <repeat group="{{ @arrayGenders }}" value="{{ @arrayGender }}">
+                            <input type="radio" name="seeking" id="{{ @arrayGender }}" value="{{ @arrayGender }}"
+                            <check if="{{ @arrayGender == @seeking }}">
+                                checked
+                            </check>
+                            >&nbsp;&nbsp;{{ ucfirst(@arrayGender) }}&nbsp;
+                        </repeat>
                     </div>
                 </div>
 
@@ -60,7 +65,7 @@
                     <div class="container-fluid form-group">
                         <label><strong>Biography</strong></label>
                         <br>
-                        <textarea class="form-control" name="biography"></textarea>
+                        <textarea class="form-control" name="biography" value="{{ @biography }}"></textarea>
                     </div>
                 </div>
 

@@ -1,6 +1,15 @@
 <?php
     class Validate
     {
+        private $_dataLayer;
+
+        /*
+        function __construct($dataLayer)
+        {
+            $this->_dataLayer = $dataLayer;
+        }
+        */
+
         function validName($name)
         {
             return !empty($name) && ctype_alpha($name);
@@ -21,13 +30,13 @@
             return !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL);
         }
 
-        function validOutdoor()
+        function validOutdoor($outdoorInterests, $validOutdoorInterests)
         {
-
+            return in_array($outdoorInterests, $validOutdoorInterests);
         }
 
-        function validIndoor()
+        function validIndoor($indoorInterests, $validIndoorInterests)
         {
-
+            return in_array($indoorInterests, $validIndoorInterests);
         }
     }

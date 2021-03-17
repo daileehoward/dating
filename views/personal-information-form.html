@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label><strong>Species</strong></label>
                         <br>
-                        <input class="form-control" type="text" name="species">
+                        <input class="form-control" type="text" name="species" value="{{ @species }}">
                     </div>
 
                     <div class="form-group">
@@ -70,9 +70,14 @@
                     <div class="form-group">
                         <label><strong>Gender</strong></label>
                         <br>
-                        <input type="radio" name="gender" value="male">&nbsp;&nbsp;Male
-                        &nbsp;&nbsp;
-                        <input type="radio" name="gender" value="female">&nbsp;&nbsp;Female
+
+                        <repeat group="{{ @arrayGenders }}" value="{{ @arrayGender }}">
+                            <input type="radio" name="gender" id="{{ @arrayGender }}" value="{{ @arrayGender }}"
+                            <check if="{{ @arrayGender == @gender }}">
+                                checked
+                            </check>
+                            >&nbsp;&nbsp;{{ ucfirst(@arrayGender) }}&nbsp;
+                        </repeat>
                     </div>
 
                     <div class="form-group">

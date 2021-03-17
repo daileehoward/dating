@@ -34,28 +34,44 @@
                     <div class="form-group">
                         <label><strong>Indoor Interests</strong></label>
                         <br>
+
                         <div class="row">
                             <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}">
-                                    {{ ucfirst(@indoorInterest) }}
+                                    <input type="checkbox" name="indoor" value="{{ @indoorInterest }}"
+                                    <check if="{{ @indoorInterest == @indoor }}">
+                                        checked
+                                    </check>
+                                    > {{ ucfirst(@indoorInterest) }}
                                 </div>
                             </repeat>
                         </div>
+
+                        <check if="{{ isset(@errors['indoor']) }}">
+                            {{ @errors["indoor"] }}
+                        </check>
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label><strong>Outdoor Interests</strong></label>
                         <br>
+
                         <div class="row">
                             <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}">
-                                    {{ ucfirst(@outdoorInterest) }}
+                                    <input type="checkbox" name="outdoor" value="{{ @outdoorInterest }}"
+                                    <check if="{{ @outdoorInterest == @outdoor }}">
+                                        checked
+                                    </check>
+                                    > {{ ucfirst(@outdoorInterest) }}
                                 </div>
                             </repeat>
                         </div>
+
+                        <check if="{{ isset(@errors['outdoor']) }}">
+                            {{ @errors["outdoor"] }}
+                        </check>
                     </div>
 
                     <!-- Next Button -->
