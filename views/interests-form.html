@@ -38,11 +38,13 @@
                         <div class="row">
                             <repeat group="{{ @indoorInterests }}" value="{{ @indoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}"
-                                    <check if="{{ @indoorInterest == @indoor }}">
-                                        checked
-                                    </check>
-                                    > {{ ucfirst(@indoorInterest) }}
+                                    <label>
+                                        <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}"
+                                        <check if="{{ @indoorInterest == @indoor }}">
+                                            checked
+                                        </check>
+                                        > {{ ucfirst(@indoorInterest) }}
+                                    </label>
                                 </div>
                             </repeat>
                         </div>
@@ -60,11 +62,13 @@
                         <div class="row">
                             <repeat group="{{ @outdoorInterests }}" value="{{ @outdoorInterest }}">
                                 <div class="col-3">
-                                    <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}"
-                                    <check if="{{ @outdoorInterest == @outdoor }}">
-                                        checked
-                                    </check>
-                                    > {{ ucfirst(@outdoorInterest) }}
+                                    <label>
+                                        <input type="checkbox" name="outdoor[]" value="{{ @outdoorInterest }}"
+                                        <check if="{{ @outdoorInterest == @outdoor }}">
+                                            checked
+                                        </check>
+                                        > {{ ucfirst(@outdoorInterest) }}
+                                    </label>
                                 </div>
                             </repeat>
                         </div>

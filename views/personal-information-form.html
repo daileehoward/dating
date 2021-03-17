@@ -72,11 +72,13 @@
                         <br>
 
                         <repeat group="{{ @arrayGenders }}" value="{{ @arrayGender }}">
-                            <input type="radio" name="gender" id="{{ @arrayGender }}" value="{{ @arrayGender }}"
-                            <check if="{{ @arrayGender == @gender }}">
-                                checked
-                            </check>
-                            >&nbsp;&nbsp;{{ ucfirst(@arrayGender) }}&nbsp;
+                            <label>
+                                <input type="radio" name="gender" id="{{ @arrayGender }}" value="{{ @arrayGender }}"
+                                <check if="{{ @arrayGender == @gender }}">
+                                    checked
+                                </check>
+                                >&nbsp;&nbsp;{{ ucfirst(@arrayGender) }}&nbsp;
+                            </label>
                         </repeat>
                     </div>
 
