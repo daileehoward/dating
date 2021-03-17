@@ -37,7 +37,7 @@
                         <input class="form-control" type="email" name="email" value="{{ @email }}">
 
                         <check if="{{ isset(@errors['email']) }}">
-                            {{ @errors["email"] }}
+                            <p class="text-danger">{{ @errors["email"] }}</p>
                         </check>
                     </div>
 

@@ -40,7 +40,7 @@
                                 <div class="col-3">
                                     <label>
                                         <input type="checkbox" name="indoor[]" value="{{ @indoorInterest }}"
-                                        <check if="{{ @indoorInterest == @indoor }}">
+                                        <check class="text-danger" if="{{ @indoorInterest == @indoor }}">
                                             checked
                                         </check>
                                         > {{ ucfirst(@indoorInterest) }}
