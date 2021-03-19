@@ -147,16 +147,32 @@
 
                 if ($validator->validEmail($email))
                 {
-                    $_SESSION['email'] = $email;
+                    if ($_SESSION['premiumMember'])
+                    {
+                        $_SESSION['premiumMember']->setEmail($email);
+                    }
+                    else
+                    {
+                        $_SESSION['member']->setEmail($email);
+                    }
                 }
                 else
                 {
                     $this->_f3->set('errors["email"]', "*Email can't be empty and must be formatted correctly");
                 }
 
-                $_SESSION['state'] = $state;
-                $_SESSION['seeking'] = $seeking;
-                $_SESSION['biography'] = $biography;
+                if ($_SESSION['premiumMember'])
+                {
+                    $_SESSION['premiumMember']->setState($state);
+                    $_SESSION['premiumMember']->setSeeking($seeking);
+                    $_SESSION['premiumMember']->setBio($biography);
+                }
+                else
+                {
+                    $_SESSION['member']->setState($state);
+                    $_SESSION['member']->setSeeking($seeking);
+                    $_SESSION['member']->setBio($biography);
+                }
 
                 if (empty($this->_f3->get('errors')))
                 {
