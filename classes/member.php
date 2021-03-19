@@ -1,5 +1,5 @@
 <?php
-    class member
+    class Member
     {
         private $_fname;
         private $_lname;

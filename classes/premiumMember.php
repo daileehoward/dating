@@ -1,5 +1,5 @@
 <?php
-    class premium_member extends member
+    class PremiumMember extends Member
     {
         private $_indoorInterests;
         private $_outdoorInterests;

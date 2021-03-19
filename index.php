@@ -23,6 +23,8 @@
     $controller = new Controller($f3);
     $dataLayer = new DataLayer();
     $validator = new Validate($dataLayer);
+    $member = new Member();
+    $premiumMember = new PremiumMember();
 
     // Turn on Fat-Free error reporting
     $f3->set('DEBUG', 3);
