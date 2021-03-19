@@ -209,33 +209,28 @@
 
                 if ($indoorInterests == "")
                 {
-                    $_SESSION['indoorInterests'] = "No indoor interests";
+                    $_SESSION['premiumMember']->setIndoorInterests("No indoor interests");
                 }
                 else if ($validator->validIndoor($indoorInterests))
                 {
-                    $_SESSION['indoorInterests'] = implode(", ", $indoorInterests);
+                    $_SESSION['premiumMember']->setIndoorInterests($indoorInterests);
                 }
                 else
                 {
-                    $this->_f3->set('errors["indoor"]', "*Select at least one indoor interest");
+                    $this->_f3->set('errors["indoor"]', "*Step away from the keyboard!");
                 }
 
                 if ($outdoorInterests == "")
                 {
-                    $_SESSION['outdoorInterests'] = "No outdoor interests";
+                    $_SESSION['premiumMember']->setOutdoorInterests("No outdoor interests");
                 }
                 else if ($validator->validOutdoor($outdoorInterests))
                 {
-                    $_SESSION['outdoorInterests'] = implode(", ", $outdoorInterests);
+                    $_SESSION['premiumMember']->setOutdoorInterests($outdoorInterests);
                 }
                 else
                 {
-                    $this->_f3->set('errors["outdoor"]', "*Select at least one outdoor interest");
-                }
-
-                if (!empty($_SESSION['indoorInterests']) && !empty($_SESSION['outdoorInterests']))
-                {
-                    $_SESSION['interests'] = $_SESSION['indoorInterests'] . ", " . $_SESSION['outdoorInterests'];
+                    $this->_f3->set('errors["outdoor"]', "*Step away from the keyboard!");
                 }
 
                 if (empty($this->_f3->get('errors')))
