@@ -166,17 +166,22 @@
                     $_SESSION['premiumMember']->setState($state);
                     $_SESSION['premiumMember']->setSeeking($seeking);
                     $_SESSION['premiumMember']->setBio($biography);
+
+                    if (empty($this->_f3->get('errors')))
+                    {
+                        $this->_f3->reroute('/interests');
+                    }
                 }
                 else
                 {
                     $_SESSION['member']->setState($state);
                     $_SESSION['member']->setSeeking($seeking);
                     $_SESSION['member']->setBio($biography);
-                }
 
-                if (empty($this->_f3->get('errors')))
-                {
-                    $this->_f3->reroute('/interests');
+                    if (empty($this->_f3->get('errors')))
+                    {
+                        $this->_f3->reroute('/summary');
+                    }
                 }
             }
 
