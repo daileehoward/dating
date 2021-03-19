@@ -18,6 +18,8 @@
         {
             global $validator;
             global $dataLayer;
+            global $member;
+            global $premiumMember;
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST')
             {
@@ -27,27 +29,50 @@
                 $age = trim($_POST['age']);
                 $gender = $_POST['gender'];
                 $phone = trim($_POST['phone']);
+                $premium = ($_POST['premium']);
 
-                if ($validator->validName($firstName) && $validator->validName($lastName))
+                if ($validator->validName($firstName))
                 {
-                    $_SESSION['name'] = $firstName . " " . $lastName;
+                    if (isset($premium))
+                    {
+                        $premiumMember->setFname($firstName);
+                    }
+                    else
+                    {
+                        $member->setFname($firstName);
+                    }
                 }
                 else
                 {
-                    if (!$validator->validName($firstName))
-                    {
-                        $this->_f3->set('errors["firstName"]', "*First name can't be empty and must contain only characters");
-                    }
+                    $this->_f3->set('errors["firstName"]', "*First name can't be empty and must contain only characters");
+                }
 
-                    if (!$validator->validName($lastName))
+                if ($validator->validName($lastName))
+                {
+                    if (isset($premium))
                     {
-                        $this->_f3->set('errors["lastName"]', "*Last name can't be empty and must contain only characters");
+                        $premiumMember->setLname($lastName);
                     }
+                    else
+                    {
+                        $member->setLname($lastName);
+                    }
+                }
+                else
+                {
+                    $this->_f3->set('errors["lastName"]', "*Last name can't be empty and must contain only characters");
                 }
 
                 if ($validator->validAge($age))
                 {
-                    $_SESSION['age'] = $age;
+                    if (isset($premium))
+                    {
+                        $premiumMember->setAge($age);
+                    }
+                    else
+                    {
+                        $member->setAge($age);
+                    }
                 }
                 else
                 {
@@ -56,19 +81,41 @@
 
                 if ($validator->validPhone($phone))
                 {
-                    $_SESSION['phone'] = $_POST['phone'];
+                    if (isset($premium))
+                    {
+                        $premiumMember->setPhone($phone);
+                    }
+                    else
+                    {
+                        $member->setPhone($phone);
+                    }
                 }
                 else
                 {
                     $this->_f3->set('errors["phone"]', "*Phone can't be empty and must be in the pattern: XXX-XXX-XXXX");
                 }
 
-                $_SESSION['species'] = $species;
-                $_SESSION['gender'] = $gender;
-
-                if (empty($this->_f3->get('errors')))
+                if (isset($premium))
                 {
-                    $this->_f3->reroute('/profile');
+                    $premiumMember->setSpecies($species);
+                    $premiumMember->setGender($gender);
+
+                    if (empty($this->_f3->get('errors')))
+                    {
+                        $_SESSION['premiumMember'] = $premiumMember;
+                        $this->_f3->reroute('/profile');
+                    }
+                }
+                else
+                {
+                    $member->setSpecies($species);
+                    $member->setGender($gender);
+
+                    if (empty($this->_f3->get('errors')))
+                    {
+                        $_SESSION['member'] = $member;
+                        $this->_f3->reroute('/profile');
+                    }
                 }
             }
 

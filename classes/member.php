@@ -3,6 +3,7 @@
     {
         private $_fname;
         private $_lname;
+        private $_species;
         private $_age;
         private $_gender;
         private $_phone;
@@ -41,6 +42,22 @@
         public function setLname($lname): void
         {
             $this->_lname = $lname;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getSpecies()
+        {
+            return $this->_species;
+        }
+
+        /**
+         * @param mixed $fname
+         */
+        public function setSpecies($species): void
+        {
+            $this->_species = $species;
         }
 
         /**
