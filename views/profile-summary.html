@@ -27,7 +27,11 @@
         <div class="container-fluid row p-5">
             <div class="col-6">
                 <div class="border vertical-align">
-                    <p class="pl-3">Name: {{ @SESSION.name }}</p>
+                    <p class="pl-3">Name:
+                        <?php
+                            $_SESSION['member']->getFname() . " " . $_SESSION['member']->getLname()
+                        ?>
+                    </p>
                 </div>
 
                 <div class="border vertical-align">
